@@ -17,21 +17,10 @@ $password=$_POST['password'];
 $studentid=$_POST['studentid'];
 $level=$_POST['level'];
 $timer=$_POST['timer'];
-$airconditioner=$_POST['airconditioner'];
-$powerdoorlocks=$_POST['powerdoorlocks'];
-$antilockbrakingsys=$_POST['antilockbrakingsys'];
-$brakeassist=$_POST['brakeassist'];
-$powersteering=$_POST['powersteering'];
-$driverairbag=$_POST['driverairbag'];
-$passengerairbag=$_POST['passengerairbag'];
-$powerwindow=$_POST['powerwindow'];
-$cdplayer=$_POST['cdplayer'];
-$centrallocking=$_POST['centrallocking'];
-$crashcensor=$_POST['crashcensor'];
-$leatherseats=$_POST['leatherseats'];
+
 $id=intval($_GET['id']);
 
-$sql="update tblstudent set StudentName=:studentname,StudentCLass=:class,StudentOverview=:studentoverview,Password=:password,Level=:level,StudentID=:studentid,Timer=:timer,AirConditioner=:airconditioner,PowerDoorLocks=:powerdoorlocks,AntiLockBrakingSystem=:antilockbrakingsys,BrakeAssist=:brakeassist,PowerSteering=:powersteering,DriverAirbag=:driverairbag,PassengerAirbag=:passengerairbag,PowerWindows=:powerwindow,CDPlayer=:cdplayer,CentralLocking=:centrallocking,CrashSensor=:crashcensor,LeatherSeats=:leatherseats where id=:id ";
+$sql="update tblstudent set StudentName=:studentname,StudentCLass=:class,StudentOverview=:studentoverview,Password=:password,Level=:level,StudentID=:studentid,Timer=:timer where id=:id ";
 $query = $dbh->prepare($sql);
 $query->bindParam(':studentname',$studentname,PDO::PARAM_STR);
 $query->bindParam(':class',$class,PDO::PARAM_STR);
@@ -40,18 +29,7 @@ $query->bindParam(':password',$password,PDO::PARAM_STR);
 $query->bindParam(':studentid',$studentid,PDO::PARAM_STR);
 $query->bindParam(':level',$level,PDO::PARAM_STR);
 $query->bindParam(':timer',$timer,PDO::PARAM_STR);
-$query->bindParam(':airconditioner',$airconditioner,PDO::PARAM_STR);
-$query->bindParam(':powerdoorlocks',$powerdoorlocks,PDO::PARAM_STR);
-$query->bindParam(':antilockbrakingsys',$antilockbrakingsys,PDO::PARAM_STR);
-$query->bindParam(':brakeassist',$brakeassist,PDO::PARAM_STR);
-$query->bindParam(':powersteering',$powersteering,PDO::PARAM_STR);
-$query->bindParam(':driverairbag',$driverairbag,PDO::PARAM_STR);
-$query->bindParam(':passengerairbag',$passengerairbag,PDO::PARAM_STR);
-$query->bindParam(':powerwindow',$powerwindow,PDO::PARAM_STR);
-$query->bindParam(':cdplayer',$cdplayer,PDO::PARAM_STR);
-$query->bindParam(':centrallocking',$centrallocking,PDO::PARAM_STR);
-$query->bindParam(':crashcensor',$crashcensor,PDO::PARAM_STR);
-$query->bindParam(':leatherseats',$leatherseats,PDO::PARAM_STR);
+
 $query->bindParam(':id',$id,PDO::PARAM_STR);
 $query->execute();
 
@@ -171,7 +149,6 @@ foreach($results as $result)
 
 
 
-
 <form method="post" class="form-horizontal" enctype="multipart/form-data">
 
 <div class="form-group">
@@ -252,7 +229,7 @@ continue;
 <div class="hr-dashed"></div>								
 <div class="form-group">
 <div class="col-sm-12">
-<h4><b>Vehicle Images</b></h4>
+<h4><b>Student Images</b></h4>
 </div>
 </div>
 
@@ -290,7 +267,7 @@ echo htmlentities("File not available");
 </div>
 
 </div>
-<div class="hr-dashed"></div>								
+<div class="hr-dashed"></div>									
 </div>
 </div>
 </div>
@@ -303,12 +280,12 @@ echo htmlentities("File not available");
 <?php }} ?>
 
 
-											<div class="form-group">
+										<center>	<div class="form-group">
 												<div class="col-sm-8 col-sm-offset-2" >
 													
-<center><button class="btn btn-primary" name="submit" type="submit" style="margin-top:4%">Save changes</button></center>
+<button class="btn btn-primary" name="submit" type="submit" style="margin-top:4%">Save changes</button>
 												</div>
-											</div>
+											</div> </center>
 
 										</form>
 									</div>

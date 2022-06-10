@@ -100,7 +100,7 @@ echo "<script>alert('Something went wrong. Please try again');</script>";
 
 <?php 
 $stid=intval($_GET['stid']);
-$sql = "SELECT tblstudent.*,tblclass.Classname,tblclass.id as bid  from tblstudent join tblclass on tblclass.id=tblstudent.StudentClass where tblstudent.id=:stid";
+$sql = "SELECT tblstudent.*,tblclass.Classname,tblclass.id as cid  from tblstudent join tblclass on tblclass.id=tblstudent.StudentClass where tblstudent.id=:stid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':stid',$stid, PDO::PARAM_STR);
 $query->execute();
@@ -110,7 +110,7 @@ if($query->rowCount() > 0)
 {
 foreach($results as $result)
 {  
-$_SESSION['brndid']=$result->bid;  
+$_SESSION['brndid']=$result->cid;  
 ?>  
 
 <section id="listing_img_slider">
@@ -267,10 +267,10 @@ $_SESSION['brndid']=$result->bid;
       <h3>Similar Student</h3>
       <div class="row">
 <?php 
-$bid=$_SESSION['brndid'];
-$sql="SELECT tblstudent.StudentName,tblclass.ClassName,tblstudent.StudentID,tblstudent.Timer,tblstudent.Level,tblstudent.id,tblstudent.StudentOverview,tblstudent.Vimage1 from tblstudent join tblclass on tblclass.id=tblstudent.StudentClass where tblstudent.StudentClass=:bid";
+$cid=$_SESSION['brndid'];
+$sql="SELECT tblstudent.StudentName,tblclass.ClassName,tblstudent.StudentID,tblstudent.Timer,tblstudent.Level,tblstudent.id,tblstudent.StudentOverview,tblstudent.Vimage1 from tblstudent join tblclass on tblclass.id=tblstudent.StudentClass where tblstudent.StudentClass=:cid";
 $query = $dbh -> prepare($sql);
-$query->bindParam(':bid',$bid, PDO::PARAM_STR);
+$query->bindParam(':cid',$cid, PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $cnt=1;

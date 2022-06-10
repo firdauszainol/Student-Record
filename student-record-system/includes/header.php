@@ -97,7 +97,7 @@ foreach($results as $result)
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="nav navbar-nav">
           <li><a href="index.php">Dashboard</a>    </li>
-          <li><a href="class-listing.php">Class</a> </li>
+          <li><a href="studentpage.php">Student</a> </li>
           <li><a href="page.php?type=aboutus">About Us</a></li>
          
           <li><a href="page.php?type=faqs">FAQs</a></li>

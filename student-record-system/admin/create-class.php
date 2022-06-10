@@ -11,16 +11,14 @@ else{
 if(isset($_POST['submit']))
 {
 $class=$_POST['class'];
-$class_id=$_POST['class_id'];
-$sql="INSERT INTO  tblclass(ClassName, ClassID) VALUES(:class, :class_id)";
+$sql="INSERT INTO  tblclass(ClassName) VALUES(:class)";
 $query = $dbh->prepare($sql);
 $query->bindParam(':class',$class,PDO::PARAM_STR);
-$query->bindParam(':class_id',$class_id,PDO::PARAM_STR);
 $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-$msg="Class Section Created successfully";
+$msg="Class Created successfully";
 }
 else 
 {
@@ -41,7 +39,7 @@ $error="Something went wrong. Please try again";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>C-Hunter Portal | Admin Create CLass</title>
+	<title>C-Hunter Portal | Admin Create Class</title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -91,12 +89,12 @@ $error="Something went wrong. Please try again";
 				<div class="row">
 					<div class="col-md-12">
 					
-						<h2 class="page-title">Create Class Section</h2>
+						<h2 class="page-title">Create Class</h2>
 
 						<div class="row">
 							<div class="col-md-10">
 								<div class="panel panel-default">
-									<div class="panel-heading">Create Class Section</div>
+									<div class="panel-heading">Create Class</div>
 									<div class="panel-body">
 										<form method="post" name="chngpwd" class="form-horizontal" onSubmit="return valid();">
 										
@@ -104,20 +102,14 @@ $error="Something went wrong. Please try again";
   	        	  <?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
 											<div class="form-group">
-												<label class="col-sm-4 control-label">Class Section</label>
+												<label class="col-sm-4 control-label">Class Section Name</label>
 												<div class="col-sm-8">
 													<input type="text" class="form-control" name="class" id="class" required>
 												</div>
 											</div>
 											<div class="hr-dashed"></div>
 											
-											<div class="form-group">
-												<label class="col-sm-4 control-label">Class ID</label>
-												<div class="col-sm-8">
-													<input type="text" class="form-control" name="class_id" id="class_id" required>
-												</div>
-											</div>
-											<div class="hr-dashed"></div>
+										
 								
 											
 											<div class="form-group">

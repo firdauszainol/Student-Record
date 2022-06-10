@@ -6,31 +6,25 @@
 			
 <li><a href="#"><i class="fa fa-files-o"></i> Class</a>
 <ul>
-<li><a href="create-brand.php">Create Class</a></li>
-<li><a href="manage-brands.php">Manage Class</a></li>
+<li><a href="create-class.php">Create Class</a></li>
+<li><a href="manage-class.php">Manage Class</a></li>
 </ul>
 </li>
 
-<li><a href="#"><i class="fa fa-users"></i> Student </a>
+<li><a href="#"><i class="fa fa-users"></i> Registered Account </a>
 					<ul>
-						<li><a href="post-avehical.php">Create Student Detail</a></li>
-						<li><a href="manage-vehicles.php">Manage Student</a></li>
+						<li><a href="reg-users.php">User</a></li>
+						<li><a href="reg-student.php">Student</a></li>
 					</ul>
 				</li>
 
-<li><a href="#"><i class="fa fa-sitemap"></i> Bookings</a>
-					<ul>
-						<li><a href="new-bookings.php">New</a></li>
-						<li><a href="confirmed-bookings.php">Confirmed</a></li>
-						<li><a href="canceled-bookings.php">Canceled</a></li>
-					</ul>
-				</li>
+
 
 		
 
 				<li><a href="testimonials.php"><i class="fa fa-table"></i> Manage Testimonials</a></li>
 				<li><a href="manage-conactusquery.php"><i class="fa fa-desktop"></i> Manage Contactus Query</a></li>
-				<li><a href="reg-users.php"><i class="fa fa-users"></i> Registered Users</a></li>
+			
 			<li><a href="manage-pages.php"><i class="fa fa-files-o"></i> Manage Pages</a></li>
 			<li><a href="update-contactinfo.php"><i class="fa fa-files-o"></i> Update Contact Info</a></li>
 

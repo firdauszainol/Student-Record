@@ -92,7 +92,7 @@ $cnt=$query->rowCount();
 </div>
 
 <?php 
-$sql = "SELECT tblstudent.*,tblclass.ClassName,tblclass.id as bid  from tblstudent 
+$sql = "SELECT tblstudent.*,tblclass.ClassName,tblclass.id as cid  from tblstudent 
 join tblclass on tblclass.id=tblstudent.StudentClass 
 where tblstudent.StudentName=:search || tblstudent.Level=:search || tblclass.ClassName=:search || tblstudent.StudentID=:search";
 $query = $dbh -> prepare($sql);
@@ -125,42 +125,15 @@ foreach($results as $result)
       <aside class="col-md-3 col-md-pull-9">
         <div class="sidebar_widget">
           <div class="widget_heading">
-            <h5><i class="fa fa-filter" aria-hidden="true"></i> Find Your  Student </h5>
+            <h5><i class="fa fa-filter" aria-hidden="true"></i> Find Your Student </h5>
           </div>
-          <div class="sidebar_filter">
-            <form action="#" method="get">
-              <div class="form-group select">
-                <select class="form-control">
-                  <option>Select Class Section</option>
-
-                  <?php $sql = "SELECT * from  tblclass ";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $result)
-{       ?>  
-<option value="<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->ClassName);?></option>
-<?php }} ?>
-                 
-                </select>
-              </div>
-              <div class="form-group select">
-                <select class="form-control">
-                  <option>Select Level</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-                </select>
-              </div>
+          <div id="search_toggle"><i class="fa fa-search" aria-hidden="true"></i></div>
+          <form action="search.php" method="post" id="header-search-form">
+            <input type="text" placeholder="Search..." name="searchdata" class="form-control" required="true">
+            <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"> Search Student</i></button>
+          </form>
              
-              <div class="form-group">
-                <button type="submit" class="btn btn-block"><i class="fa fa-search" aria-hidden="true"></i> Search Student</button>
-              </div>
-            </form>
-          </div>
+          
         </div>
 
         <div class="sidebar_widget">
@@ -169,7 +142,7 @@ foreach($results as $result)
           </div>
           <div class="recent_addedcars">
             <ul>
-<?php $sql = "SELECT tblstudent.*,tblclass.ClassName,tblstudent.id as bid  from tblstudent join tblclass on tblclass.id=tblstudent.StudentClass order by id desc limit 4";
+<?php $sql = "SELECT tblstudent.*,tblclass.ClassName,tblstudent.id as cid  from tblstudent join tblclass on tblclass.id=tblstudent.StudentClass order by id desc limit 4";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);

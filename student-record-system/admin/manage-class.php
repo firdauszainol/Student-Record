@@ -33,7 +33,7 @@ $msg="Page data updated  successfully";
 	<meta name="author" content="">
 	<meta name="theme-color" content="#3e454c">
 	
-	<title>C-Hunter Portal |Admin Manage Class   </title>
+	<title>C-Hunter Portal |Admin Manage CLass   </title>
 
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -83,11 +83,11 @@ $msg="Page data updated  successfully";
 				<div class="row">
 					<div class="col-md-12">
 
-						<h2 class="page-title">Manage Class Section</h2>
+						<h2 class="page-title">Manage Class</h2>
 
 						<!-- Zero Configuration Table -->
 						<div class="panel panel-default">
-							<div class="panel-heading">Listed  Section</div>
+							<div class="panel-heading">Listed  Class</div>
 							<div class="panel-body">
 							<?php if($error){?><div class="errorWrap"><strong>ERROR</strong>:<?php echo htmlentities($error); ?> </div><?php } 
 				else if($msg){?><div class="succWrap"><strong>SUCCESS</strong>:<?php echo htmlentities($msg); ?> </div><?php }?>
@@ -95,8 +95,7 @@ $msg="Page data updated  successfully";
 									<thead>
 										<tr>
 										<th>#</th>
-												<th>Class Section</th>
-												<th>Class ID</th>
+												<th>Class Section Name</th>
 											<th>Creation Date</th>
 											<th>Updation date</th>
 										
@@ -106,8 +105,7 @@ $msg="Page data updated  successfully";
 									<tfoot>
 										<tr>
 										<th>#</th>
-											<th>Class Section</th>
-											<th>Class ID</th>
+											<th>Class Section Name</th>
 											<th>Creation Date</th>
 											<th>Updation date</th>
 										
@@ -129,7 +127,6 @@ foreach($results as $result)
 										<tr>
 											<td><?php echo htmlentities($cnt);?></td>
 											<td><?php echo htmlentities($result->ClassName);?></td>
-											<td><?php echo htmlentities($result->ClassID);?></td>
 											<td><?php echo htmlentities($result->CreationDate);?></td>
 											<td><?php echo htmlentities($result->UpdationDate);?></td>
 <td><a href="edit-class.php?id=<?php echo $result->id;?>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;

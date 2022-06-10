@@ -58,7 +58,7 @@ error_reporting(0);
         <h1>Student Listing</h1>
       </div>
       <ul class="coustom-breadcrumb">
-        <li><a href="index.php">Home</a></li>
+        <li><a href="studentpage.php">Home</a></li>
         <li>Student Listing</li>
       </ul>
     </div>
@@ -93,7 +93,7 @@ $cnt=$query->rowCount();
 
 <?php 
 
-$sql = "SELECT tblstudent.*,tblclass.ClassName,tblclass.id as bid  from tblstudent join tblclass on tblclass.id=tblstudent.StudentClass where tblstudent.StudentClass=:class and tblstudent.Level=:Level";
+$sql = "SELECT tblstudent.*,tblclass.ClassName,tblclass.id as cid  from tblstudent join tblclass on tblclass.id=tblstudent.StudentClass where tblstudent.StudentClass=:class and tblstudent.Level=:Level";
 $query = $dbh -> prepare($sql);
 $query -> bindParam(':class',$class, PDO::PARAM_STR);
 $query -> bindParam(':Level',$Level, PDO::PARAM_STR);
@@ -165,11 +165,11 @@ foreach($results as $result)
 
         <div class="sidebar_widget">
           <div class="widget_heading">
-            <h5><i class="fa fa-car" aria-hidden="true"></i> Recently Listed Student</h5>
+            <h5><i class="fa fa-users" aria-hidden="true"></i> Recently Listed Student</h5>
           </div>
           <div class="recent_addedcars">
             <ul>
-<?php $sql = "SELECT tblstudent.*,tblclass.ClassName,tblclass.id as bid  from tblstudent join tblclass on tblclass.id=tblstudent.StudentName order by id desc limit 4";
+<?php $sql = "SELECT tblstudent.*,tblclass.ClassName,tblclass.id as cid  from tblstudent join tblclass on tblclass.id=tblstudent.StudentName order by id desc limit 4";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
