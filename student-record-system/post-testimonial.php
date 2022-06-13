@@ -20,7 +20,7 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-$msg="Testimonail submitted successfully";
+$msg="Testimonial submitted successfully";
 }
 else 
 {

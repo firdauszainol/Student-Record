@@ -35,8 +35,8 @@ $query->execute();
 $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
-echo "<script>alert('Booking successfull.');</script>";
-echo "<script type='text/javascript'> document.location = 'my-booking.php'; </script>";
+echo "<script>alert('Selecting student successfull.');</script>";
+echo "<script type='text/javascript'> document.location = 'my-student.php'; </script>";
 }
 else 
 {
@@ -114,16 +114,16 @@ $_SESSION['brndid']=$result->cid;
 ?>  
 
 <section id="listing_img_slider">
-  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" class="img-responsive" alt="image" width="900" height="560"></div>
-  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage2);?>" class="img-responsive" alt="image" width="900" height="560"></div>
-  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage3);?>" class="img-responsive" alt="image" width="900" height="560"></div>
-  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage4);?>" class="img-responsive"  alt="image" width="900" height="560"></div>
+  <div><img src="admin/img/studentimages/<?php echo htmlentities($result->Vimage1);?>" class="img-responsive" alt="image" width="900" height="560"></div>
+  <div><img src="admin/img/studentimages/<?php echo htmlentities($result->Vimage2);?>" class="img-responsive" alt="image" width="900" height="560"></div>
+  <div><img src="admin/img/studentimages/<?php echo htmlentities($result->Vimage3);?>" class="img-responsive" alt="image" width="900" height="560"></div>
+  <div><img src="admin/img/studentimages/<?php echo htmlentities($result->Vimage4);?>" class="img-responsive"  alt="image" width="900" height="560"></div>
   <?php if($result->Vimage5=="")
 {
 
 } else {
   ?>
-  <div><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage5);?>" class="img-responsive" alt="image" width="900" height="560"></div>
+  <div><img src="admin/img/studentimages/<?php echo htmlentities($result->Vimage5);?>" class="img-responsive" alt="image" width="900" height="560"></div>
   <?php } ?>
 </section>
 <!--/Listing-Image-Slider-->
@@ -170,7 +170,7 @@ $_SESSION['brndid']=$result->cid;
             
             <!-- Tab panes -->
             <div class="tab-content"> 
-              <!-- vehicle-overview -->
+              <!-- student-overview -->
               <div role="tabpanel" class="tab-pane active" id="student-overview">
                 
                 <p><?php echo htmlentities($result->StudentOverview);?></p>
@@ -256,7 +256,42 @@ $_SESSION['brndid']=$result->cid;
    
       </div>
       
+       <!--Side-Bar-->
+       <aside class="col-md-3">
       
+      <div class="share_vehicle">
+        <p>Share: <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> <a href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a> </p>
+      </div>
+      <div class="sidebar_widget">
+        <div class="widget_heading">
+          <h5><i class="fa fa-envelope" aria-hidden="true"></i>Select Student</h5>
+        </div>
+        <form method="post">
+          <!-- <div class="form-group">
+            <label>From Date:</label>
+            <input type="date" class="form-control" name="fromdate" placeholder="From Date" required>
+          </div>
+          <div class="form-group">
+            <label>To Date:</label>
+            <input type="date" class="form-control" name="todate" placeholder="To Date" required>
+          </div> -->
+          <div class="form-group">
+            <textarea rows="4" class="form-control" name="message" placeholder="Message" required></textarea>
+          </div>
+        <?php if($_SESSION['login'])
+            {?>
+            <div class="form-group">
+              <input type="submit" class="btn"  name="submit" value="Select Now">
+            </div>
+            <?php } else { ?>
+<a href="#loginform" class="btn btn-xs uppercase" data-toggle="modal" data-dismiss="modal">Login For Book</a>
+
+            <?php } ?>
+        </form>
+      </div>
+    </aside>
+    <!--/Side-Bar--> 
+
     </div>
     
     <div class="space-20"></div>
@@ -280,7 +315,7 @@ foreach($results as $result)
 { ?>      
         <div class="col-md-3 grid_listing">
           <div class="product-listing-m gray-bg">
-            <div class="product-listing-img"> <a href="student-detail.php?stid=<?php echo htmlentities($result->id);?>"><img src="admin/img/vehicleimages/<?php echo htmlentities($result->Vimage1);?>" class="img-responsive" alt="image" /> </a>
+            <div class="product-listing-img"> <a href="student-detail.php?stid=<?php echo htmlentities($result->id);?>"><img src="admin/img/studentimages/<?php echo htmlentities($result->Vimage1);?>" class="img-responsive" alt="image" /> </a>
             </div>
             <div class="product-listing-content">
               <h5><a href="student-detail.php?stid=<?php echo htmlentities($result->id);?>"><?php echo htmlentities($result->ClassName);?> , <?php echo htmlentities($result->StudentName);?></a></h5>

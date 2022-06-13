@@ -44,7 +44,7 @@ $msg="Student record deleted successfully";
 
 
 <!-- Font awesome -->
-<link rel="stylesheet" href="admin/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" href="admin/css/font-awesome.min.css"> -->
 	<!-- Sandstone Bootstrap CSS -->
 	<!-- <link rel="stylesheet" href="admin/css/bootstrap.min.css"> -->
 	<!-- Bootstrap Datatables -->
@@ -167,7 +167,7 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->StudentName);?></td>
 											<td><?php echo htmlentities($result->StudentID);?></td>
 											<td><?php echo htmlentities($result->ClassName);?></td>
-                      <td><?php echo htmlentities($result->Password);?></td>
+                      						<td><?php echo htmlentities($result->Password);?></td>
 											<td><?php echo htmlentities($result->Level);?></td>
 											<td><?php echo htmlentities($result->Timer);?></td>
 												<td><?php echo htmlentities($result->StudentOverview);?></td>
@@ -287,49 +287,39 @@ foreach($results as $result)
 <!-- /Testimonial--> 
 
 
-<!--Footer -->
-<?php include('includes/footer.php');?>
-<!-- /Footer--> 
+		<!--Footer -->
+		<?php include('includes/footer.php'); ?>
+		<!-- /Footer-->
 
-<!--Back to top-->
-<div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
-<!--/Back to top--> 
+		<!--Back to top-->
+		<div id="back-top" class="back-top"> <a href="#top"><i class="fa fa-angle-up" aria-hidden="true"></i> </a> </div>
+		<!--/Back to top-->
 
-<!--Login-Form -->
-<?php include('includes/login.php');?>
-<!--/Login-Form --> 
+		<!--Login-Form -->
+		<?php include('includes/login.php'); ?>
+		<!--/Login-Form -->
 
-<!--Register-Form -->
-<?php include('includes/registration.php');?>
+		<!--Register-Form -->
+		<?php include('includes/registration.php'); ?>
 
-<!--/Register-Form --> 
+		<!--/Register-Form -->
 
-<!--Forgot-password-Form -->
-<?php include('includes/forgotpassword.php');?>
-<!--/Forgot-password-Form --> 
+		<!--Forgot-password-Form -->
+		<?php include('includes/forgotpassword.php'); ?>
+		<!--/Forgot-password-Form -->
 
-<!-- Scripts --> 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script> 
-<script src="assets/js/interface.js"></script> 
-<!--Switcher-->
-<script src="assets/switcher/js/switcher.js"></script>
-<!--bootstrap-slider-JS--> 
-<script src="assets/js/bootstrap-slider.min.js"></script> 
-<!--Slider-JS--> 
-<script src="assets/js/slick.min.js"></script> 
-<script src="assets/js/owl.carousel.min.js"></script>
 
-	<!-- Loading Scripts -->
-	<script src="admin/js/jquery.min.js"></script>
-	<script src="admin/js/bootstrap-select.min.js"></script>
-	<script src="admin/js/bootstrap.min.js"></script>
-	<script src="admin/js/jquery.dataTables.min.js"></script>
-	<script src="admin/js/dataTables.bootstrap.min.js"></script>
-	<script src="admin/js/Chart.min.js"></script>
-	<script src="admin/js/fileinput.js"></script>
-	<script src="admin/js/chartData.js"></script>
-	<script src="admin/js/main.js"></script>
+
+		<!-- Loading Scripts -->
+		<script src="admin/js/jquery.min.js"></script>
+		<script src="admin/js/bootstrap-select.min.js"></script>
+		<script src="admin/js/bootstrap.min.js"></script>
+		<script src="admin/js/jquery.dataTables.min.js"></script>
+		<script src="admin/js/dataTables.bootstrap.min.js"></script>
+		<script src="admin/js/Chart.min.js"></script>
+		<script src="admin/js/fileinput.js"></script>
+		<script src="admin/js/chartData.js"></script>
+		<script src="admin/js/main.js"></script>
 
 </body>
 
