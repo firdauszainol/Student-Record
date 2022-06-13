@@ -1,14 +1,10 @@
 
 <header>
-  <div class="default-header">
+<div class="default-header">
     <div class="container">
       <div class="row">
         <div class="col-sm-3 col-md-2">
-          <!-- <div class="logo"> <a href="index.php"><img src="assets/images/logo.png" alt="image"/></a> </div> -->
-          <div class="logo">
-	<a href="index.php" style="font-size: 25px;">C-HUNTER</a>  
-		<span class="menu-btn"></span>
-</div>
+          <div class="logo"> <a href="index.php"><img src="assets/images/CHunterlogo.png" height="80" width="100"alt="image"/></a> </div>
         </div>
         <div class="col-sm-9 col-md-10">
           <div class="header_info">

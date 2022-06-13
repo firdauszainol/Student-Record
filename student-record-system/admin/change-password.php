@@ -63,6 +63,12 @@ $error="Your current password is not valid.";
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/style.css">
+
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/CHunterlogo.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/CHunterlogo.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/CHunterlogo.png">
+<link rel="apple-touch-icon-precomposed" href="assets/images/CHunterlogo.png">
+<link rel="shortcut icon" href="assets/images/CHunterlogo.png">
 <script type="text/javascript">
 function valid()
 {

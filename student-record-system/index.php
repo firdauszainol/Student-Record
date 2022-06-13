@@ -10,7 +10,7 @@ $sql = "delete from tblstudent  WHERE  id=:delid";
 $query = $dbh->prepare($sql);
 $query -> bindParam(':delid',$delid, PDO::PARAM_STR);
 $query -> execute();
-$msg="Student record deleted successfully";
+// $msg="Student record deleted successfully";
 }
 
 ?>
@@ -35,11 +35,11 @@ $msg="Student record deleted successfully";
 	<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/pink.css" title="pink" media="all" />
 	<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/green.css" title="green" media="all" />
 	<link rel="alternate stylesheet" type="text/css" href="assets/switcher/css/purple.css" title="purple" media="all" />
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicon-icon/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/favicon-icon/apple-touch-icon-114-precomposed.html">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/favicon-icon/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="assets/images/favicon-icon/apple-touch-icon-57-precomposed.png">
-<link rel="shortcut icon" href="assets/images/favicon-icon/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/CHunterlogo.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/CHunterlogo.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/CHunterlogo.png">
+<link rel="apple-touch-icon-precomposed" href="assets/images/CHunterlogo.png">
+<link rel="shortcut icon" href="assets/images/CHunterlogo.png">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
 
 
@@ -171,8 +171,8 @@ foreach($results as $result)
 											<td><?php echo htmlentities($result->Level);?></td>
 											<td><?php echo htmlentities($result->Timer);?></td>
 												<td><?php echo htmlentities($result->StudentOverview);?></td>
-		<td><a href="edit-student-detail.php?id=<?php echo $result->id;?>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;
-<a href="index.php?del=<?php echo $result->id;?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td>
+		<td><center><a href="edit-student-detail.php?id=<?php echo $result->id;?>"><i class="fa fa-edit"></i></a></center>
+<!-- <a href="index.php?del=<?php echo $result->id;?>" onclick="return confirm('Do you want to delete');"><i class="fa fa-close"></i></a></td> -->
 										</tr>
 										<?php $cnt=$cnt+1; }} ?>
 										
